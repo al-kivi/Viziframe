@@ -1,0 +1,19 @@
+%br
+%form{:action=>'login', :method=>'post'}
+  %fieldset
+    %legend Login form
+    %br
+    %table
+      %tr
+        %td
+          %label{:for=>"email"} Email address
+        %td
+          %input{:type=>"text", :name=>"email"}
+      %tr
+      %tr
+        %td
+          %label{:for=>"password"} Password:
+        %td
+          %input{:type=>"password", :name=>"password"}
+    %br
+    %input{:type=>"submit", :value=>"Login"}

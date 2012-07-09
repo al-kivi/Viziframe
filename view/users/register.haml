@@ -1,0 +1,31 @@
+%br
+%form{:action=>'register', :method=>'POST'}
+  %fieldset
+    %legend Register as a new user
+    %table
+      %tr
+        %td{:width=>200}
+          %label{:for=>"email"} Email
+        %td
+          %input{:type=>"text", :name=>"email"}
+      %tr
+        %td
+          %label{:for=>"password"} Password (min 6 chars)
+        %td
+          %input{:type=>"password", :name=>"password"}
+      %tr
+        %td
+          %label{:for=>"password_confirmation"} Password confirmation
+        %td
+          %input{:type=>"password", :name=>"password_confirmation"}
+      %tr
+        %td
+          %label{:for=>"username"} Username
+        %td
+          %input{:type=>"text", :name=>"username"}
+    %br
+    %p
+      %input{:type=>"submit", :name => "submit", :value => "Register"}
+      or
+      %input{:type=>"submit", :name => "cancel", :value => "Cancel"}
+

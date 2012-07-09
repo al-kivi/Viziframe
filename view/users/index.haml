@@ -1,0 +1,15 @@
+%table
+  %thead
+    %tr
+      %th{:width=>100} EMail .....
+      %th{:width=>100} Username 
+      %th Actions
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td #{Vizi::Users.a(user.email, :edit, user.id)}
+        %td #{user.username}
+        %td #{Vizi::Users.a('Delete', :delete, user.id)}
+
+- if @users.respond_to?(:navigation) and @users.page_count > 1
+  = @users.navigation

@@ -1,0 +1,58 @@
+%html
+  %head
+    %title #{@title}
+    %link(href="/css/styles.css" rel="stylesheet")
+  %body
+    #wrapper
+      #toptable{:width=>"800"}
+        %table
+          %tr{:height=>"20"}
+            %td.small.left.flash{:width=>"300",:height=>"10"}
+              #{flashbox}
+            %td.small{:width=>"300",:height=>"10"}
+            %td.small.right{:width=>"200",:height=>"10"}
+              - if logged_in?
+                User is [#{session[:email]}] ... 
+                %a{:href=>"/users/logout"} Logout
+              - else
+                %a{:href=>"/users/login"} Login
+                or
+                %a{:href=>"/users/register"}Register
+      #menutable
+        %table
+          %tr
+            %td{:width => "420"}
+              .large
+                Viziframe
+            %td{:width => "100"}
+              %a{:href=>"/"} Home
+            %td{:width => "100"}
+              %a{:href=>"/about"} About
+            %td{:width => "100"}
+              %a{:href=>"/posts"} Post                           
+      #bodytable
+        %table{:width => "100%"}
+          %tr
+            - lwidth = #{@lwidth}
+            - if lwidth != "0%"
+              %td{:width => lwidth} 
+                #left_bar
+                  %h1 Left Bar
+                  This is the left bar of the webpage
+            %td
+              #content_bar
+                = @content
+            - rwidth = #{@rwidth}
+            - if rwidth != "0%"   
+              %td{:width => rwidth}
+                #right_bar
+                  %h1 Right Bar  
+                  This is the right bar of the webpage
+                  %br
+                  %br
+                  %a{:href=> "/rssfeeds/feed.atom"}
+                    %img{:title => "", :src => "/images/rssfeed.png", :alt => "Subscribe to RSS Feed" }
+      %br
+      - if not @nofooter 
+        #footer  
+          This is the footer. 
