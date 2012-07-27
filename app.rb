@@ -5,19 +5,19 @@
 
 require 'rubygems'
 
-if ENV['HOSTNAME'].nil?
-  require 'ramaze'
-  Ramaze.options.mode = :dev
-else
-  #needed to avoid the Passenger exception page every hour or so
+if ENV['RACK_ENV'] == 'production'
   Gem.clear_paths
-  #use my own gem when available
   Gem.path.unshift('/home/vizitrax/.gems')
   require 'ramaze'
   Ramaze.options.mode = :live
+else
+  require 'ramaze'
+  Ramaze.options.mode = :dev
 end
+Ramaze::Log.info('We start in %s mode' % Ramaze.options.mode.to_s)
 
 require 'sequel'
+require 'haml'
 
 # Make sure that Ramaze knows where you are
 Ramaze.options.roots = [__DIR__]

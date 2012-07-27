@@ -6,7 +6,8 @@ class MainController < BaseController
 
   def index
     @lwidth = '20%'
-    @rwidth = '20%'  
+    @rwidth = '20%'
+    @height = '800px'
     @title = 'Welcome to Viziframe!'
   end
 
@@ -16,7 +17,8 @@ class MainController < BaseController
       redirect('users/login')
     end
     @lwidth = '0%'
-    @rwidth = '20%'  
+    @rwidth = '20%'
+    @height = '800px'
     @title = 'Welcome to the About page!'
   end
 

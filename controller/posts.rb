@@ -29,6 +29,7 @@ class Posts < BaseController
   def index
     @lwidth = '20%'
     @rwidth = '20%'
+    @height = '800px' 
     @posts = paginate(Post.eager(:comments, :user), :limit => 3)
     @title = 'Posts'
   end
@@ -38,6 +39,7 @@ class Posts < BaseController
   def view(id)
     @lwidth = '0%'
     @rwidth = '20%'
+    @height = '800px' 
     @nofooter = true
     @post = Post[id]
 

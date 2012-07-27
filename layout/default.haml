@@ -32,16 +32,17 @@
               %a{:href=>"/posts"} Post                           
       #bodytable
         %table{:width => "100%"}
-          %tr
+          - height = #{@height} 
+          %tr{:height => height}   
             - lwidth = #{@lwidth}
             - if lwidth != "0%"
-              %td{:width => lwidth} 
+              %td{:width => lwidth}
                 #left_bar
                   %h1 Left Bar
                   This is the left bar of the webpage
             %td
               #content_bar
-                = @content
+                #{@content}
             - rwidth = #{@rwidth}
             - if rwidth != "0%"   
               %td{:width => rwidth}

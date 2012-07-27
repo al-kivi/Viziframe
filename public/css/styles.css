@@ -76,8 +76,8 @@ a:hover{
 #content_bar{
   background-color: white;
   float: left;
+  height: 100%;
   padding: 2px 10px 2px 10px;
-  height: 500px;
   width: 95%;
   font-size: 13px;
 }
@@ -96,16 +96,16 @@ li{
 #left_bar{
   background-color: white;
   float: left;
+  height: 100%; 
   padding: 2px 10px 2px 10px;
-  height: 500px;
   font-size: 13px;
 }
 
 #right_bar{
   background-color: white;
   float: right;
+  height: 100%; 
   padding: 2px 10px 2px 10px;
-  height: 500px;
   font-size: 13px;
 }
 
