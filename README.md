@@ -23,7 +23,9 @@ And the following Gems
 
 * Ramaze 2012.04.14
 * Haml 3.1.6
-* Sequel 3.36.1
+* Sqlite3 1.3.6
+* Sequel 3.37.0
+* Rdiscount 1.6.8
 
 ### Get started in the Development Environment
 
