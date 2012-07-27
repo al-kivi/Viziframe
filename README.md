@@ -55,9 +55,9 @@ And the following Gems
 
 * Install the required Gems
 
-* The app.rb module will look for a production hostname in ENV['HOSTNAME']
-	* If the hostname is nil, then a development environment is assumed
-	* If the hostname is not nil, then a production (:live) environment is assumed. The conditional logic handles a Passenger environment, and makes appropriate adjustments to the Gem paths.
+* The app.rb module will look for the value in ENV['RACK_ENV']
+	* If the value is nil, then a development environment is assumed
+	* If the value is 'production', then it is a production environment. The conditional logic handles a Passenger environment, and makes appropriate adjustments to the Gem paths.
 	* You may need to modify the add.rb code to reflect the requirements of your production environment.
 
 ### Demo Application
