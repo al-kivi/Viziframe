@@ -4,6 +4,10 @@
 
 class Posts < BaseController
   map '/posts'
+  
+  layout :default
+  helper :xhtml, :user, :paginate
+  engine :haml
 
   # These methods require the user to be logged in. If this isn't the case the
   # user will be redirected back to the previous page and a message is displayed.
@@ -25,7 +29,6 @@ class Posts < BaseController
   def index
     @lwidth = '20%'
     @rwidth = '20%'
-    @height = '800' 
     @posts = paginate(Post.eager(:comments, :user), :limit => 3)
     @title = 'Posts'
   end
@@ -35,7 +38,6 @@ class Posts < BaseController
   def view(id)
     @lwidth = '0%'
     @rwidth = '20%'
-    @height = '800' 
     @nofooter = true
     @post = Post[id]
 

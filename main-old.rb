@@ -6,8 +6,7 @@ class MainController < BaseController
 
   def index
     @lwidth = '20%'
-    @rwidth = '20%'
-    @height = '800'
+    @rwidth = '20%'  
     @title = 'Welcome to Viziframe!'
   end
 
@@ -17,8 +16,7 @@ class MainController < BaseController
       redirect('users/login')
     end
     @lwidth = '0%'
-    @rwidth = '20%'
-    @height = '800'
+    @rwidth = '20%'  
     @title = 'Welcome to the About page!'
   end
 
@@ -28,6 +26,6 @@ class MainController < BaseController
   def notemplate
     @title = 'Welcome to Viziframe!'
     
-    return 'There is no template associated with this action.'
+    return 'There is no \'notemplate.xhtml\' associated with this action.'
   end
 end

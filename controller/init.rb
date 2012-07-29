@@ -4,8 +4,8 @@
 
 class BaseController < Ramaze::Controller
   layout :default
-  helper :xhtml, :user
-  engine :haml
+  helper :xhtml, :user, :paginate
+  engine :etanni                # this can be changed to :haml, if required
 end
 
 # Here you can require all your other controllers. Note that if you have multiple

@@ -5,10 +5,6 @@
 class Users < BaseController
   map '/users'
   
-  layout :default
-  helper :xhtml, :user, :paginate
-  engine :haml
-  
   # Shows an overview of all the users that have been added to the database.
   def index
     @lwidth = '0%'

@@ -1,4 +1,4 @@
-## Viziframe - Application framework using Ramaze and HAML
+## Viziframe - Application framework using Ramaze with HAML option.
 
 By Al Kivi
 
@@ -6,7 +6,7 @@ Email: al.kivi@vizitrax.com
 
 ### About
 
-Viziframe is an application framework designed to support small applications built with Ramaze and Haml.
+Viziframe is an application framework designed to support small applications built with Ramaze. This application supports both the Etanni and the Haml templates.
 
 * Default layout in Haml supports all the screens
 * Each screen has a standardized menu and left-bar and right-bar columns
@@ -22,10 +22,10 @@ Viziframe is an application framework designed to support small applications bui
 And the following Gems
 
 * Ramaze 2012.04.14
-* Haml 3.1.6
 * Sqlite3 1.3.6
 * Sequel 3.37.0
 * Rdiscount 1.6.8
+* Haml 3.1.6 (optional)
 
 ### Get started in the Development Environment
 
@@ -48,6 +48,16 @@ And the following Gems
 
 * Go to the /apps/viziframe sub-directory to start up the application
 * Enter the following in the terminal command line > ramaze start
+
+### Select the Haml template instead of Etanni
+
+* Go to the the Controller init.rb and change the defined engine
+
+    class BaseController < Ramaze::Controller
+      layout :default
+      helper :xhtml, :user, :paginate
+      engine :etanni           # this can be changed to :haml, if required
+    end
 
 ### Get started in the Production Environment (Passenger)
 

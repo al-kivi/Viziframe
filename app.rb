@@ -17,7 +17,7 @@ end
 Ramaze::Log.info('We start in %s mode' % Ramaze.options.mode.to_s)
 
 require 'sequel'
-require 'haml'
+## require 'haml'       # needed if haml is used
 
 # Make sure that Ramaze knows where you are
 Ramaze.options.roots = [__DIR__]
